@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "ianh",
+  "version": "${version}",
+  "name": "I am Not Here",
+  "description": "I am not here; the command cannot find me.",
+  "authors": [],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/ianh/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.ianh.ianh.client.IanhDataGenerator"
+    ],
+    "client": [
+      "org.ianh.ianh.client.IanhClient"
+    ],
+    "main": [
+      "org.ianh.ianh.Ianh"
+    ]
+  },
+  "mixins": [
+    "ianh.mixins.json",
+    {
+      "config": "ianh.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
